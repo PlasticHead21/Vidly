@@ -21,7 +21,6 @@ namespace Vidly.Models
         [Display(Name = "Membreship Type")]
         public MembershipType MembershipType { get; set; }
 
-        [Required]
         [Display(Name = "Date of Birth")]
         public DateTime Birthdate { get; set; }
     }
