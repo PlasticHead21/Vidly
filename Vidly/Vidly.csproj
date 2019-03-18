@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201903181718011_CustomersMigration.Designer.cs">
       <DependentUpon>201903181718011_CustomersMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903182045396_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201903182045396_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201903182045396_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -254,9 +258,11 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -274,6 +280,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903181718011_CustomersMigration.resx">
       <DependentUpon>201903181718011_CustomersMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903182045396_PopulateMembershipTypes.resx">
+      <DependentUpon>201903182045396_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
