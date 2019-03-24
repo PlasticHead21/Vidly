@@ -17,11 +17,14 @@
             <tr>
                 <th>Movie</th>
                 <th>Genre</th>
-                <th>Delete</th>
+                @*<th>Delete</th>*@
             </tr>
         </thead>
         <tbody>
-            <tr><td>@Html.ActionLink(movie.Name, "Edit", null, new { @class = "nav-link" })</td><td>@Html.DisplayText(movie.Genre.Name)</td></tr>
+            <tr>
+                <td>@Html.ActionLink(movie.Name, "Edit", new { id = movie.ID }, new { @class = "nav-link" })</td>
+                <td>@movie.Genre.Name</td>
+            </tr>
         </tbody>
     </table>
 }
