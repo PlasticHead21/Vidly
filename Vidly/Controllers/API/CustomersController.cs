@@ -15,7 +15,7 @@ namespace Vidly.Controllers.API
 
         public CustomersController()
         {
-                _context = new ApplicationDbContext();
+            _context = new ApplicationDbContext();
         }
 
         [HttpGet]
@@ -28,7 +28,7 @@ namespace Vidly.Controllers.API
         public Customer GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            if(customer is null) throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customer is null) throw new HttpResponseException(HttpStatusCode.NotFound);
             return customer;
         }
 
