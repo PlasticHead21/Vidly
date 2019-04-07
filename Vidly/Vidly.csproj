@@ -184,6 +184,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\API\MoviesController.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
