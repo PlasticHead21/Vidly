@@ -10,21 +10,22 @@
     @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
 </p>
 
-@foreach (var movie in Model)
-{
-    <table id="movies" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Movie</th>
-                <th>Genre</th>
-                @*<th>Delete</th>*@
-            </tr>
-        </thead>
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            @*<th>Delete</th>*@
+        </tr>
+    </thead>
+    @foreach (var movie in Model)
+    {
         <tbody>
             <tr>
                 <td>@Html.ActionLink(movie.Name, "Edit", new { id = movie.ID }, new { @class = "nav-link" })</td>
                 <td>@movie.Genre.Name</td>
             </tr>
         </tbody>
-    </table>
-}
+
+    }
+</table>
