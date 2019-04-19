@@ -18,8 +18,12 @@ namespace Vidly.Controllers
             _context = new ApplicationDbContext();
         }
         public ActionResult Index()
-        {          
-            return View();
+        {
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+            else
+                return View("ReadOnlyList");
+
         }
 
         public ActionResult Details(int? id)
@@ -28,7 +32,7 @@ namespace Vidly.Controllers
             if (movie is null) return HttpNotFound();
             return View(movie);
         }
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -77,7 +81,7 @@ namespace Vidly.Controllers
             }
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Movies");
+            return RedirectToAction("List", "Movies");
         }
 
         protected override void Dispose(bool disposing)
